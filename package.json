@@ -1,0 +1,25 @@
+{
+  "name": "toy-react-export-wrapper",
+  "version": "1.0.0",
+  "description": "react project build test",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && tsc & tsc --module ESNext --outDir ./dist/es"
+  },
+  "keywords": [],
+  "author": "@liuhui",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
