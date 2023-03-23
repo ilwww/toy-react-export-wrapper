@@ -1,6 +1,6 @@
 {
   "name": "toy-react-export-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "react project build test",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -17,7 +17,11 @@
   "license": "ISC",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.com"
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ilwww/toy-react-export-wrapper.git"
   },
   "dependencies": {
     "react": "^18.2.0"
