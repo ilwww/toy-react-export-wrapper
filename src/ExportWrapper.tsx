@@ -1,4 +1,4 @@
-import React from 'react';
+import {Children, MouseEventHandler, PropsWithChildren, ReactElement, cloneElement, useCallback} from 'react';
 
 export type QueryType = ConstructorParameters<typeof URLSearchParams>[0];
 
@@ -10,12 +10,12 @@ export interface Props {
     target?: '_self';
 }
 
-export default function ExportWrapper(props: React.PropsWithChildren<Props>) {
+export default function ExportWrapper(props: PropsWithChildren<Props>) {
     const {children, query, api, target, ...rest} = props;
-    const elem = React.Children.only(children) as React.ReactElement;
+    const elem = Children.only(children) as ReactElement;
 
-    const onSubClick = React.useCallback(
-        async (event: React.MouseEventHandler<any>) => {
+    const onSubClick = useCallback(
+        async (event: MouseEventHandler<any>) => {
             // Bypass onClick if it was present
             if (elem && elem.props && typeof elem.props.onClick === 'function') {
                 elem.props.onClick(event);
@@ -29,7 +29,7 @@ export default function ExportWrapper(props: React.PropsWithChildren<Props>) {
     // 被部分组件包裹（如Tooltip）后，可能会注入样式给rest.className，此时需要合并样式
     const classes = [elem?.props?.className || '', rest?.className || ''].join(' ');
 
-    return React.cloneElement(
+    return cloneElement(
         elem,
         {
             ...rest,

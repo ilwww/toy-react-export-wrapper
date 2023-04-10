@@ -12,7 +12,19 @@ const inputOptions = {
     plugins: [
         typescript(),
         resolve(),
-        commonjs({include: 'node_modules/**'}),
+        commonjs({
+            include: 'node_modules/**',
+            namedExports: {
+                'node_modules/react/index.js': [
+                    'Children',
+                    'MouseEventHandler',
+                    'PropsWithChildren',
+                    'ReactElement',
+                    'cloneElement',
+                    'useCallback',
+                ],
+            },
+        }),
         autoExternal({dependencies: false}),
         sourcemaps(),
         babel({exclude: 'node_modules/**', extensions: ['.js', '.ts', '.tsx']}),
