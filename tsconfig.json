@@ -1,20 +1,28 @@
 {
-  "compilerOptions": {
-    "jsx": "preserve",
-    "allowJs": false,
-    "target": "ES2015",
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "sourceMap": true,
-    "noEmit": false,
-    "declaration": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "rootDir": "./src",
-    "outDir": "./dist/cjs"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ESNext",
+        "lib": [
+          "ESNext",
+          "DOM",
+          "DOM.Iterable"
+        ],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "declaration": false,
+        "allowJs": false,
+        "skipLibCheck": true,
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "toy-react-export-wrapper": ["./src/index.ts"],
+            "toy-react-export-wrapper/*": ["./src/*"]
+        },
+    },
+    "include": ["src", "site", "*.ts"]
 }

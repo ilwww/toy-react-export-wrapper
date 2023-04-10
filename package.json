@@ -1,16 +1,20 @@
 {
   "name": "toy-react-export-wrapper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react project build test",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/cjs/index.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist"
+    "es",
+    "cjs",
+    "style",
+    "types"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc & tsc --module ESNext --outDir ./dist/es"
+    "clean": "rm -rf cjs es types",
+    "build": "sh scripts/build.sh",
+    "start": "skr dev --src-dir=site"
   },
   "keywords": [],
   "author": "@liuhui",
@@ -23,7 +27,29 @@
     "type": "git",
     "url": "git@github.com:ilwww/toy-react-export-wrapper.git"
   },
-  "dependencies": {
-    "react": "^18.2.0"
+  "devDependencies": {
+    "@reskript/cli": "5.7.4",
+    "@reskript/cli-build": "5.7.4",
+    "@reskript/cli-dev": "5.7.4",
+    "@reskript/cli-lint": "5.7.4",
+    "@reskript/config-lint": "5.7.4",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "core-js": "^3.30.0",
+    "eslint": "^8.38.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.19.1",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "stylelint": "^15.4.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4",
+    "webpack": "^5.78.0"
   }
 }

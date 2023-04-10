@@ -1,2 +1,4 @@
-/dist
+/es
+/cjs
+/types
 node_modules
