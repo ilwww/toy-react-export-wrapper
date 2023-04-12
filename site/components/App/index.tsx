@@ -1,4 +1,4 @@
-import ExportWrapper from 'toy-react-export-wrapper';
+import ExportWrapper from '../../../es/index';
 
 export default function App() {
     return (

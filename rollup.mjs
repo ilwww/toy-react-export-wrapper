@@ -18,6 +18,7 @@ const inputOptions = {
         autoExternal({dependencies: false}),
         sourcemaps(),
         babel({exclude: 'node_modules/**', extensions: ['.js', '.ts', '.tsx']}),
+        // 去掉文件空格/换行
         terser({mangle: false}),
     ],
     external: ['react/jsx-runtime'],
